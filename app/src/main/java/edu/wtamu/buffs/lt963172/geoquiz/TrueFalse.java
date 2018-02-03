@@ -5,7 +5,6 @@ package edu.wtamu.buffs.lt963172.geoquiz;
  */
 
 public class TrueFalse {
-
     private int mQuestion;
     // this variable will hold a resource ID for a string
 
