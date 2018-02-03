@@ -11,8 +11,8 @@ import android.widget.TextView;
 public class CheatActivity extends Activity {
 
     private static final String TAG = "CheatActivity";
-    public static final String EXTRA_ANSWER_IS_TRUE = "tfquiz.ANSWER_IS_TRUE";
-    public static final String EXTRA_ANSWER_SHOWN = "tfquiz.ANSWER_SHOWN";
+    public static final String EXTRA_ANSWER_IS_TRUE = "edu.wtamu.buffs.lt963172.geoquiz.ANSWER_IS_TRUE";
+    public static final String EXTRA_ANSWER_SHOWN = "edu.wtamu.buffs.lt963172.geoquiz.ANSWER_SHOWN";
 
     boolean mAnswerIsTrue;
 
@@ -54,6 +54,7 @@ public class CheatActivity extends Activity {
                 setAnswerShownResult(true);
             }
         });
+
     }
 
 }

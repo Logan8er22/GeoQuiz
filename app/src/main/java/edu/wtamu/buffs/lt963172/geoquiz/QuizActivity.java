@@ -1,8 +1,11 @@
 package edu.wtamu.buffs.lt963172.geoquiz;
 
-import android.os.Bundle;
+import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -25,11 +28,11 @@ public class QuizActivity extends Activity {
     TextView mQuestionTextView;
 
     TrueFalse[] mAnswerKey = new TrueFalse[] {
-            new TrueFalse(R.string.question_oceans, true),
-            new TrueFalse(R.string.question_mideast, false),
-            new TrueFalse(R.string.question_africa, false),
-            new TrueFalse(R.string.question_americas, true),
-            new TrueFalse(R.string.question_asia, true)
+            new TrueFalse(R.string.question_1, true),
+            new TrueFalse(R.string.question_2, false),
+            new TrueFalse(R.string.question_3, false),
+            new TrueFalse(R.string.question_4, true),
+            new TrueFalse(R.string.question_5, true)
     };
 
     int mCurrentIndex = 0;
@@ -62,11 +65,17 @@ public class QuizActivity extends Activity {
                 .show();
     }
 
+    @TargetApi(11)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate() called");
         setContentView(R.layout.activity_quiz);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            ActionBar actionBar = getActionBar();
+            actionBar.setSubtitle("TFFTT");
+        }
 
         mIsCheater = false;
 
